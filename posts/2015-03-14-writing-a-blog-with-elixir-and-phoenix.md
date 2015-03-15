@@ -74,7 +74,7 @@ We can fix this by making sure the bower.json contains an override. Make sure yo
 }
 ```
 
-One VERY unfortunate problem is that `modernizr` still seems to cause a bug on the page. The only solution I've found so far is to go in and edit it by hand. Open `bower_components/modernizr/modernizr.js`, scroll to the very bottom, and where it passes in `(this, this.document)` to the closure, edit that to `(window, window.document)`. If you know a better solution, please leave a comment below.
+One VERY unfortunate problem is that `modernizr` still seems to cause a bug on the page: `TypeError: modernizr cannot read property 'document' of undefined`. The only solution I've found so far is to go in and edit it by hand. Open `bower_components/modernizr/modernizr.js`, scroll to the very bottom, and where it passes in `(this, this.document)` to the closure, edit that to `(window, window.document)`. If you know a better solution, please leave a comment below.
 
 In the root directory of your project, create a new directory `posts/`. 
 
