@@ -1,0 +1,30 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.errors != [] do %>
+    <p style="color: red">Oops, something went wrong!</p>
+  <% end %>
+
+  <p>
+    <label>
+      <span>Title:</span>
+      <%= text_input f, :title %>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <span>Author:</span>
+      <%= text_input f, :author %>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <span>Body:</span>
+      <%= text_input f, :body %>
+    </label>
+  </p>
+
+  <p>
+    <%= submit "Submit" %>
+  </p>
+<% end %>
