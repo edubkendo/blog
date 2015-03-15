@@ -30,6 +30,7 @@ config :logger, :console, format: "[$level] $message\n"
 # Configure your database
 config :blog, Blog.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "blog_dev"
+  username: "ecto",
+  password: "purple12",
+  database: "blog_development",
+  port: 15432
