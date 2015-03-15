@@ -9,23 +9,22 @@
 
     <title><%= "#{title}: #{@post.title}" %></title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/solarized_dark.css") %>">
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-        </ul>
-      </div>
+    <%= render "nav.html" %>
+    
+    <div class="row">
 
-      <%= @inner %>
+      <div class="large-10 column">
+        <%= @inner %>
+      </div>
 
       <div class="footer">
       </div>
 
     </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/highlight.pack.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script>require("web/static/js/app")</script>
   </body>

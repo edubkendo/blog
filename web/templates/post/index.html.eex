@@ -1,16 +1,10 @@
-<h2>Listing posts</h2>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-  </tr>
-<%= for post <- @posts do %>
-  <tr>
-    <td><%= post.title %></td>
-
-    <td><%= link "Show", to: post_path(@conn, :show, post) %></td>
-  </tr>
-<% end %>
-</table>
-
+<ul class="no-bullet">
+  <%= for post <- Enum.reverse(@posts) do %>
+      <li>
+        <div class="article-entry">
+          <h4 class="subheader"><small><%= get_date(post.date) %></small></h4>
+          <h4><%= link post.title, to: post_path(@conn, :show, post) %></h4>
+        </div>
+      </li>
+  <% end %>
+</ul>

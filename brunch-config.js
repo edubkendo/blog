@@ -2,7 +2,7 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: 'js/app.js'
+        joinTo: 'js/app.js'
     },
     stylesheets: {
       joinTo: 'css/app.css'
@@ -15,7 +15,7 @@ exports.config = {
   // Phoenix paths configuration
   paths: {
     // Which directories to watch
-    watched: ["web/static", "test/static"],
+      watched: ["web/static", "test/static"],
 
     // Where to compile files to
     public: "priv/static"
