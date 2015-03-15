@@ -1,22 +1,4 @@
-<h2>Show post</h2>
-
-<ul>
-
-  <li>
-    <strong>Title:</strong>
-    <%= @post.title %>
-  </li>
-
-  <li>
-    <strong>Author:</strong>
-    <%= @post.author %>
-  </li>
-
-  <li>
-    <strong>Body:</strong>
-    <%= @post.body %>
-  </li>
-
-</ul>
-
+<div class="content">
+  <%= safe @output %>
+</div>
 <%= link "Back", to: post_path(@conn, :index) %>

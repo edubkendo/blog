@@ -12,6 +12,10 @@ defmodule Blog.PostController do
 
   def show(conn, %{"id" => id}) do
     post = Repo.get(Post, id)
-    render conn, "show.html", post: post
+    output = Path.join("posts", post.file)
+      |> File.read!
+      |> Earmark.to_html
+    put_layout(conn, "post.html")
+    |> render "show.html", post: post, output: output
   end
 end

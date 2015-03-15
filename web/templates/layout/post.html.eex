@@ -7,8 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><%= "#{title}" %></title>
+    <title><%= "#{title}: #{@post.title}" %></title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/solarized_dark.css") %>">
   </head>
 
   <body>
@@ -24,6 +25,7 @@
       </div>
 
     </div> <!-- /container -->
+    <script src="<%= static_path(@conn, "/js/highlight.pack.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script>require("web/static/js/app")</script>
   </body>

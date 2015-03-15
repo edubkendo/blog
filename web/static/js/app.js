@@ -8,3 +8,5 @@ let App = {
 }
 
 export default App
+
+hljs.initHighlightingOnLoad();
