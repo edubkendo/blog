@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "authors": [
+    "Eric West <esw9999@gmail.com>"
+  ],
+  "description": "Eric West's Blog",
+  "license": "MIT",
+  "homepage": "http://ericwest.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.1"
+  },
+  "overrides": {
+      "modernizr": {
+          "main": "modernizr.js"
+      }
+  }
+}
