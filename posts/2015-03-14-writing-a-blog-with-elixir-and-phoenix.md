@@ -158,7 +158,8 @@ defmodule Blargh.Router do
     pipe_through :browser # Use the default browser stack
 
     # We'll remove the line that was here and replace it with this one.
-    resources "/", PostController, only: [:index, :show]
+    get "/", PageController, :index
+    resources "/post", PostController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.
@@ -168,7 +169,23 @@ defmodule Blargh.Router do
 end
 ```
 
-The line we removed, which mapped the `PageController` to `/` is replaced with a new line mapping `/` to our PostController. Because our blog posts are read-only resources (we make new ones by writing them in the `posts/` dir, not posting them to some web form) we limit this to only the `index` and `show` actions.
+We've added a new line mapping `/post` to our PostController. Because our blog posts are read-only resources (we make new ones by writing them in the `posts/` dir, not posting them to some web form) we limit this to only the `index` and `show` actions.
+
+Open up `web/controllers/page_controller.ex` and change it to the following:
+
+```elixir
+defmodule Blargh.PageController do
+  use Blargh.Web, :controller
+
+  plug :action
+
+  def index(conn, _params) do
+    redirect conn, to: Blargh.Router.Helpers.post_path(conn, :index)
+  end
+end
+```
+
+This will allow our main page to be served from `/` but keep our `:show` action from interfering with the serving of static content like the favicon.
 
 Now we should be able to run our migrations:
 
