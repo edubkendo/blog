@@ -15,8 +15,12 @@ defmodule Blog.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Blog, []},
-     applications: [:phoenix, :cowboy, :logger]]
+     applications: app_list(Mix.env)]
   end
+
+  defp app_list(:dev), do: [:dotenv | app_list]
+  defp app_list(_), do: app_list
+  defp app_list, do: [:phoenix, :cowboy, :earmark, :phoenix_ecto, :postgrex,  :logger]
 
   # Specifies your project dependencies
   #
@@ -26,7 +30,7 @@ defmodule Blog.Mixfile do
      {:phoenix_ecto, "~> 0.1"},
      {:postgrex, ">= 0.0.0"},
      {:earmark, "~> 0.1.13"},
-     {:chronos, "~> 0.3.9"},
+     {:dotenv, "~> 0.0.4"},
      {:cowboy, "~> 1.0"}]
   end
 end

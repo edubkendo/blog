@@ -14,4 +14,5 @@ erl_crash.dump
 # comment this depending on your deployment strategy.
 /priv/static/css
 /priv/static/js
-mix.secret.env
+prod.secret.exs
+.env
