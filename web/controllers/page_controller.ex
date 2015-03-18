@@ -4,6 +4,6 @@ defmodule Blog.PageController do
   plug :action
 
   def index(conn, _params) do
-    render conn, "index.html"
+    redirect conn, to: Blog.Router.Helpers.post_path(conn, :index)
   end
 end
