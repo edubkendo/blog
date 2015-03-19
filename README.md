@@ -1,5 +1,7 @@
 # Blog
 
+Source code for [ericwest.io](http://ericwest.io)
+
 To start your new Phoenix application:
 
 1. Install dependencies with `mix deps.get`
