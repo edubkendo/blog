@@ -26,6 +26,7 @@ defmodule Blog.Mixfile do
      {:phoenix_ecto, "~> 0.1"},
      {:postgrex, ">= 0.0.0"},
      {:earmark, "~> 0.1.13"},
+     {:exrm, "~> 0.15.3"},
      {:cowboy, "~> 1.0"}]
   end
 end
