@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mix setup
+mix phoenix.server

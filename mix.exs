@@ -7,6 +7,7 @@ defmodule Blog.Mixfile do
      elixir: "~> 1.0",
      elixirc_paths: ["lib", "web"],
      compilers: [:phoenix] ++ Mix.compilers,
+     aliases: aliases,
      deps: deps]
   end
 
@@ -16,6 +17,12 @@ defmodule Blog.Mixfile do
   def application do
     [mod: {Blog, []},
      applications: [:phoenix, :cowboy, :phoenix_ecto, :postgrex, :earmark, :logger]]
+  end
+
+  defp aliases do
+    [
+        setup: ["ecto.create", "ecto.migrate", "accumulate"],
+    ]
   end
 
   # Specifies your project dependencies

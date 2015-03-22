@@ -15,5 +15,6 @@ config :blog, Blog.Repo,
   username: "postgres",
   password: "postgres",
   database: "blog_test",
+  hostname: "postgres",
   size: 1,
   max_overflow: false

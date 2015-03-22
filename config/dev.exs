@@ -30,7 +30,9 @@ config :logger, :console, format: "[$level] $message\n"
 # Configure your database
 config :blog, Blog.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DATABASE_USER"),
-  password: System.get_env("DATABASE_PASSWORD"),
-  database: System.get_env("DATABASE_NAME"),
-  port: (System.get_env("PGPORT") |> String.to_integer)
+  username: "postgres",
+  password: "postgres",
+  database: "blog_dev",
+  hostname: "postgres",
+  port: 5432
+
