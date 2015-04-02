@@ -268,7 +268,7 @@ $ docker run -p 4000 --name blog_dev --link blog-postgres:postgres -v $PWD:/opt/
 This will leave us in a bash prompt inside the container. Switch to the directory with the mounted volume and run our little setup script:
 
 ```bash
-$ MIX_ENV=dev
+$ export MIX_ENV=dev
 $ cd ../dev
 $ ./setup
 ```

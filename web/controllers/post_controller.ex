@@ -8,7 +8,7 @@ defmodule Blog.PostController do
 
   def index(conn, _params) do
     query = from p in Post,
-      order_by: p.date
+      order_by: [asc: p.date]
     posts = Repo.all(query)
     render conn, "index.html", posts: posts
   end
