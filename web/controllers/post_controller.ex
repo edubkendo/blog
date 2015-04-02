@@ -2,11 +2,14 @@ defmodule Blog.PostController do
   use Blog.Web, :controller
 
   alias Blog.Post
+  import Ecto.Query
 
   plug :action
 
   def index(conn, _params) do
-    posts = Repo.all(Post)
+    query = from p in Post,
+      order_by: p.date
+    posts = Repo.all(query)
     render conn, "index.html", posts: posts
   end
 
