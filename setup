@@ -1,4 +1,5 @@
 #!/bin/bash
 
+export PORT=8888
 mix setup
 mix phoenix.server

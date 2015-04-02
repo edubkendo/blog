@@ -1,7 +1,7 @@
 FROM trenpixster/elixir
 MAINTAINER Eric West "esw9999@gmail.com"
 
-ENV REFRESHED_AT 2015-03-21-10-51
+ENV REFRESHED_AT 2015-03-22-2-43
 
 RUN apt-get update
 RUN apt-get -y install postgresql-client
@@ -14,7 +14,7 @@ ENV MIX_ENV prod
 RUN mix deps.get
 RUN mix deps.compile
 
-ENV PORT 4000
+ENV PORT 8888
 
-EXPOSE 4000
+EXPOSE 8888
 CMD [ "/opt/app/blog/prod/setup" ]
