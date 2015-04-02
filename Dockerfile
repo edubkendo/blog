@@ -1,7 +1,7 @@
 FROM trenpixster/elixir
 MAINTAINER Eric West "esw9999@gmail.com"
 
-ENV REFRESHED_AT 2015-04-02-12-01-02-am
+ENV REFRESHED_AT 2015-04-02-12-01-29-am
 
 RUN apt-get update
 RUN apt-get -y install postgresql-client
