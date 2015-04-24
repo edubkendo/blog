@@ -22,4 +22,6 @@ Open the file `/usr/share/X11/xkb/symbols/us` and somewhere around line 8 or 9, 
 
 On my machine, this tells it to send the `Henkan` and `Mode_switch` signals when I press the menu key (the menu key is the key on the right side of the space bar which falls between `alt` and `ctrl` on my keyboard, and has an odd symbol on it with several horizontal lines. If you do not have this key, or want to use something else, you may need to do a bit more research.
 
+Everything I read suggested that the command Mozc was looking for was `Eisu_toggle` however I wasted hours on trying to figure out why this wasn't working, before deciding to take a look in `/usr/share/X11/xkb/symbols/jp`, where I discovered the `Henkan` and `Mode_switch` signals.
+
 Next, cd into the directory `/var/lib/xkb/` where you will find several files ending in `.xkm` (I consistently had three). Remove all of them with `rm` (possibly `sudo rm`). These files are the systems compiled record of the information contained in all the xkb config files and since you just edited one, you need to remove these to get it to re-compile the configuration. Afterwards, either restart your machine or restart X with `sudo pkill X`. When it comes back up, you should now be able to switch Mozc on and then toggle between English and Japanese with the press of a single key. Good Luck and 頑張ってください.
